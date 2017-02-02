@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{B03386E3-C545-9EB6-CF84-3AF39ED23C1E}") = "LightHouse-War", "Assembly-CSharp-firstpass.csproj", "{47446C04-0A81-8D28-8E6D-B590F2E535D3}"
+EndProject
+Project("{B03386E3-C545-9EB6-CF84-3AF39ED23C1E}") = "LightHouse-War", "Assembly-CSharp.csproj", "{19389977-5D29-F311-8C0D-9436E4C2808D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47446C04-0A81-8D28-8E6D-B590F2E535D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47446C04-0A81-8D28-8E6D-B590F2E535D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47446C04-0A81-8D28-8E6D-B590F2E535D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47446C04-0A81-8D28-8E6D-B590F2E535D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19389977-5D29-F311-8C0D-9436E4C2808D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19389977-5D29-F311-8C0D-9436E4C2808D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19389977-5D29-F311-8C0D-9436E4C2808D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19389977-5D29-F311-8C0D-9436E4C2808D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
