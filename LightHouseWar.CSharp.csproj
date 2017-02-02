@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4683F2D9-8903-883D-A065-FA4CA00E047E}</ProjectGuid>
+    <ProjectGuid>{0B018670-A80D-4EFF-EBB6-66D603F40452}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -66,13 +66,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="LightHouse War.CSharp.Plugins.csproj">
-      <Project>{8E9F03FB-1F15-E5A6-20AD-EAB8837EEB7B}</Project>
-      <Name>LightHouse War.CSharp.Plugins</Name>
+    <ProjectReference Include="LightHouseWar.CSharp.Plugins.csproj">
+      <Project>{CDA85409-3A24-9AF8-75CA-6C22A5916D54}</Project>
+      <Name>LightHouseWar.CSharp.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BoatFloater.cs" />
+    <Compile Include="Assets\Scripts\cameraFollowUser.cs" />
+    <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\WaveController.cs" />
   </ItemGroup>
   <ItemGroup>
