@@ -28,8 +28,6 @@ public class player : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-		print (rb.transform);
-		print (rb.velocity);
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
 			rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
