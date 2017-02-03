@@ -23,19 +23,31 @@ public class player : MonoBehaviour {
 
     void Update() {
         Fire();
-        Move();
+       // Move();
     }
 
     // Update is called once per frame
     void FixedUpdate () {
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
+		print (rb.transform);
+		print (rb.velocity);
+		if (Input.GetKey(KeyCode.UpArrow))
+		{
+			rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+			//transform.position -= transform.right * Time.deltaTime * speed;
+		}
+		else if (Input.GetKey(KeyCode.DownArrow))
+		{
+			rb.AddForce(transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+		}
 
-		Vector3 movement = new Vector3 (moveVertical, 0.0f, -moveHorizontal);
-
-        Vector3 accel = movement * speed;
-
-		rb.AddForce (accel);
+		if (Input.GetKey(KeyCode.LeftArrow))
+		{
+			transform.Rotate(0, Time.deltaTime * -angle, 0);
+		}
+		else if (Input.GetKey(KeyCode.RightArrow))
+		{
+			transform.Rotate(0, Time.deltaTime * angle, 0);
+		}
     }
 
     void Fire ()
