@@ -33,7 +33,7 @@ public class BoatFloater : MonoBehaviour {
 
         transform.localPosition = new Vector3(
             transform.localPosition.x,
-            planeCloth.vertices[closestVertexIndex].y / 50,
+            planeCloth.vertices[closestVertexIndex].y / 100,
             transform.localPosition.z
         );
     }

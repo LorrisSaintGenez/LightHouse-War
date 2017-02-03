@@ -4,6 +4,7 @@ using System.Collections;
 public class player : MonoBehaviour {
 
 	public float speed;
+    public float angle;
 
 	private Rigidbody rb;
 
@@ -20,6 +21,7 @@ public class player : MonoBehaviour {
 
     void Update() {
         Fire();
+        Move();
     }
 
     // Update is called once per frame
@@ -46,6 +48,28 @@ public class player : MonoBehaviour {
             nextFire = Time.time + fireRate;
             Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y + 5, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z + 30, barrelSpawn.rotation.w)) as Rigidbody;
             newBarrel.velocity = -50f * barrelSpawn.right;
+        }
+    }
+
+    void Move()
+    {
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+            //transform.position -= transform.right * Time.deltaTime * speed;
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            rb.AddForce(transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(0, Time.deltaTime * -angle, 0);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(0, Time.deltaTime * angle, 0);
         }
     }
 }
