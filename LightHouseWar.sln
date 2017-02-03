@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouseWar.CSharp.Plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouseWar.CSharp", "LightHouseWar.CSharp.csproj", "{0B018670-A80D-4EFF-EBB6-66D603F40452}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouseWar.CSharp.Editor", "LightHouseWar.CSharp.Editor.csproj", "{15C2F615-F305-5FA1-E2D0-0215AC6636E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{0B018670-A80D-4EFF-EBB6-66D603F40452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B018670-A80D-4EFF-EBB6-66D603F40452}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B018670-A80D-4EFF-EBB6-66D603F40452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C2F615-F305-5FA1-E2D0-0215AC6636E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C2F615-F305-5FA1-E2D0-0215AC6636E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C2F615-F305-5FA1-E2D0-0215AC6636E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C2F615-F305-5FA1-E2D0-0215AC6636E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
