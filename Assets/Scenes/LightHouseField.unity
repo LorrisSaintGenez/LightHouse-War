@@ -591,8 +591,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 734359658}
-  m_LocalRotation: {x: -0.23626056, y: 0.39516908, z: 0.10591305, w: 0.8813653}
-  m_LocalPosition: {x: -66.54572, y: -62.65756, z: -60.09269}
+  m_LocalRotation: {x: 0.05486438, y: 0.013474665, z: 0.00074561284, w: -0.9984026}
+  m_LocalPosition: {x: 16.258228, y: -73.21581, z: -568.8903}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -899,6 +899,50 @@ Rigidbody:
 Transform:
   m_PrefabParentObject: {fileID: 467324, guid: 214de7dc16249324db357bf6519b54af, type: 2}
   m_PrefabInternal: {fileID: 257986499}
+--- !u!1 &1072091975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1072091977}
+  - 114: {fileID: 1072091976}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1072091976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1072091975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fc941aa4ac7b64f966b274b9a7ec9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelText: {fileID: 0}
+  barrelCount: 20
+  hpText: {fileID: 0}
+  healthPoint: 100
+--- !u!4 &1072091977
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1072091975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8999996, y: 11.219999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &1093930289 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000014122642152, guid: 234f3d0499bfaaf4eac0ce9ea9bb6104,
@@ -1421,11 +1465,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 0c18b457b7f1d3743a1137b2226c7d2a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -39.8
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0c18b457b7f1d3743a1137b2226c7d2a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 32.2
+      value: 46.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0c18b457b7f1d3743a1137b2226c7d2a, type: 2}
       propertyPath: m_LocalPosition.z
