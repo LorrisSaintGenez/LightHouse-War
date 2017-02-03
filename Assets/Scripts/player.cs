@@ -3,6 +3,8 @@ using System.Collections;
 
 public class player : MonoBehaviour {
 
+    public GameController gameController;
+
 	public float speed;
     public float angle;
 
@@ -36,18 +38,26 @@ public class player : MonoBehaviour {
 		rb.AddForce (accel);
     }
 
-    void Fire () {
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire) {
-            nextFire = Time.time + fireRate;
-            Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y + 5, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z, barrelSpawn.rotation.w)) as Rigidbody;
-            newBarrel.velocity = -15f * speed * barrelSpawn.right;
-        }
-
-        if (Input.GetKey(KeyCode.Mouse1) && Time.time > nextFire)
+    void Fire ()
+    {
+        if (gameController.GetBarrelLeft() > 0)
         {
-            nextFire = Time.time + fireRate;
-            Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y + 5, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z + 30, barrelSpawn.rotation.w)) as Rigidbody;
-            newBarrel.velocity = -50f * barrelSpawn.right;
+            if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y + 5, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z, barrelSpawn.rotation.w)) as Rigidbody;
+                newBarrel.velocity = -15f * speed * barrelSpawn.right;
+                gameController.RemoveBarrel();
+                gameController.LowerHealthPoint(10);
+            }
+
+            if (Input.GetKey(KeyCode.Mouse1) && Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y + 5, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z + 30, barrelSpawn.rotation.w)) as Rigidbody;
+                newBarrel.velocity = -50f * barrelSpawn.right;
+                gameController.RemoveBarrel();
+            }
         }
     }
 
@@ -60,7 +70,7 @@ public class player : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            rb.AddForce(transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+            rb.AddForce(transform.right * Time.deltaTime * 2 * speed, ForceMode.Impulse);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))

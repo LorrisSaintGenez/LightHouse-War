@@ -37,7 +37,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013634710054}
-  - 114: {fileID: 114000012678916938}
   m_Layer: 0
   m_Name: BarrelSpawn
   m_TagString: Untagged
@@ -53,7 +52,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012263016930}
-  - 114: {fileID: 114000011134156532}
   - 114: {fileID: 114000012379173508}
   - 54: {fileID: 54000013741752222}
   m_Layer: 0
@@ -172,17 +170,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114000011134156532
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014122642152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad9a6c4ce88091c469912383a0016fac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000012379173508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,18 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fcc777cdf3a3546a4ff746cfac43a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
   speed: 10
+  angle: 0
   barrel: {fileID: 5400000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 2}
   barrelSpawn: {fileID: 4000013634710054}
   fireRate: 0.1
---- !u!114 &114000012678916938
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012215378952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad9a6c4ce88091c469912383a0016fac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
