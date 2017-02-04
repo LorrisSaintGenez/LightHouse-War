@@ -21,7 +21,6 @@ public class RotateTower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print (transform.rotation);
 		if (rotatingRight) {
 			transform.Rotate (0, speed, 0, Space.World);
 			count++;
@@ -32,7 +31,6 @@ public class RotateTower : MonoBehaviour {
 		if (count > 500 && !plain || count > 1000 && plain) {
 			plain = true;
 			count = 0;
-			print ("Change");
 			rotatingRight = !rotatingRight;
 		}
 

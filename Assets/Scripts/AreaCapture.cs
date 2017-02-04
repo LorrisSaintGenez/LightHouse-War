@@ -23,6 +23,7 @@ public class AreaCapture : MonoBehaviour {
     {
         timeLeft = timeCapture;
         owner = null;
+        ownerText = timer_player_1;
     }
 
     void Update()

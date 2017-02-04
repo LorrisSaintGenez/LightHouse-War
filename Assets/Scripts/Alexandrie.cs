@@ -26,6 +26,8 @@ public class Alexandrie : MonoBehaviour {
 
 	public float SpawnTime;
 
+    public GameController sphereOwner;
+
 	// 0 no One, 1 player One, 2 player Two
 	private int winner;
 
@@ -38,15 +40,15 @@ public class Alexandrie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetKey(KeyCode.A))
+		if (sphereOwner.getOwner() == null)
 		{
 			changeUser (0);
 		}
-		if (Input.GetKey(KeyCode.B))
-		{
-			changeUser (1);
+        else if (sphereOwner.getOwner() == "Boat_Player_One")
+        {
+            changeUser (1);
 		}
-		if (Input.GetKey(KeyCode.C))
+		else
 		{
 			changeUser (2);
 		}
@@ -54,8 +56,9 @@ public class Alexandrie : MonoBehaviour {
 	}
 
 	void TowerFire(){
-		float force = Random.Range (5f, 20f);
-		Vector3 up = new Vector3 (0, Random.Range(5f, 15f), 0);
+		float force = Random.Range (20f, 50f);
+		Vector3 up = new Vector3 (0, Random.Range(20f, 40f), 0);
+
 		Vector3 vect = new Vector3 (0, 1, -1);
 		Rigidbody newBarrel = Instantiate(Barrel, new Vector3(SpawnTowerOne.position.x, SpawnTowerOne.position.y, SpawnTowerOne.position.z), SpawnTowerOne.rotation) as Rigidbody;
 		Instantiate(explosion, new Vector3(SpawnTowerOne.position.x, SpawnTowerOne.position.y, SpawnTowerOne.position.z), SpawnTowerOne.rotation);

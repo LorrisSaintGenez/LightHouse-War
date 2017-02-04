@@ -105,7 +105,7 @@ public class player1 : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Barrel A")
+        if (col.gameObject.tag == "Barrel")
         {
             LowerHealthPoint(10);
             Destroy(col.gameObject);
