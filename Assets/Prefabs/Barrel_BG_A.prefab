@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 114000010290651488}
   m_Layer: 0
   m_Name: Barrel_BG_A
-  m_TagString: Untagged
+  m_TagString: Barrel A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

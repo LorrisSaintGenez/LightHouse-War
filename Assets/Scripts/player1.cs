@@ -105,7 +105,7 @@ public class player1 : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Barrel_BG_A" || col.gameObject.name == "Barrel_BG_A(Clone)")
+        if (col.gameObject.tag == "Barrel A")
         {
             LowerHealthPoint(10);
             Destroy(col.gameObject);

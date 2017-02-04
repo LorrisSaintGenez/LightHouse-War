@@ -18,36 +18,44 @@ Platform assembly: F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\U
 Loading F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.213 seconds
+- Completed reload, in  0.226 seconds
 Platform assembly: F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 59Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 47.401115 ms
+UnloadTime: 1.802905 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 16f8 -> priority: 1 
-  Thread -> id: 30f4 -> priority: 1 
+  Thread -> id: 9e8 -> priority: 1 
+  Thread -> id: 2a0c -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.273157 ms
+UnloadTime: 5.599870 ms
 
 Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 595.
-Total: 0.352370 ms (FindLiveObjects: 0.050460 ms CreateObjectMapping: 0.021809 ms MarkObjects: 0.260001 ms  DeleteObjects: 0.013684 ms)
-
-[Buoyancy.cs] Name="Barrel_BG_C" volume=0.0, mass=10.0, density=500.0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-[Buoyancy.cs] Name="Barrel_BG_A" volume=5.0, mass=10.0, density=2.0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+Total: 0.224507 ms (FindLiveObjects: 0.029506 ms CreateObjectMapping: 0.020098 ms MarkObjects: 0.160790 ms  DeleteObjects: 0.007269 ms)
 
 [Buoyancy.cs] Name="Boat_Player_One" volume=0.5, mass=1.0, density=2.0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 [Buoyancy.cs] Name="Boat_Player_Two" volume=0.5, mass=1.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
