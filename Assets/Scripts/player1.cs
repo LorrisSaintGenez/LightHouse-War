@@ -11,6 +11,8 @@ public class player1 : MonoBehaviour {
 
 	private Rigidbody rb;
 
+	public GameObject ComplexFire;
+
     public Rigidbody barrel;
     public Transform barrelSpawn;
 
@@ -37,6 +39,11 @@ public class player1 : MonoBehaviour {
     void LowerHealthPoint(int damages)
     {
         healthPoint -= damages;
+
+		GameObject fire = Instantiate (ComplexFire, new Vector3 (transform.position.x, transform.position.y + 1 + (100 - healthPoint) / 200, transform.position.z), barrelSpawn.rotation) as GameObject;
+		fire.transform.parent = transform;
+
+
         UpdateHealthPointText();
     }
 
@@ -58,6 +65,11 @@ public class player1 : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
+		if (Input.GetKey (KeyCode.Space)) {
+			rb.velocity = Vector3.zero;
+			rb.angularVelocity = Vector3.zero; 
+		}
+
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
 			rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
@@ -100,6 +112,11 @@ public class player1 : MonoBehaviour {
                 newBarrel.velocity = 50f * barrelSpawn.right;
                 RemoveBarrel();
             }
+
+			if (Input.GetKey(KeyCode.M))
+			{
+				LowerHealthPoint (1);
+			}
         }
     }
 
