@@ -18,20 +18,112 @@ Platform assembly: F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\U
 Loading F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.177 seconds
+- Completed reload, in  0.213 seconds
 Platform assembly: F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\Unity Projects\LightHouseWar\LightHouse-War_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 59Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.882637 ms
+UnloadTime: 47.401115 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3148 -> priority: 1 
-  Thread -> id: 2ab4 -> priority: 1 
+  Thread -> id: 16f8 -> priority: 1 
+  Thread -> id: 30f4 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.197038 ms
+UnloadTime: 5.273157 ms
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 249.
-Total: 0.214244 ms (FindLiveObjects: 0.024375 ms CreateObjectMapping: 0.015822 ms MarkObjects: 0.154803 ms  DeleteObjects: 0.009407 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 595.
+Total: 0.352370 ms (FindLiveObjects: 0.050460 ms CreateObjectMapping: 0.021809 ms MarkObjects: 0.260001 ms  DeleteObjects: 0.013684 ms)
+
+[Buoyancy.cs] Name="Barrel_BG_C" volume=0.0, mass=10.0, density=500.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Boat_Player_One" volume=0.5, mass=1.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Boat_Player_Two" volume=0.5, mass=1.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 

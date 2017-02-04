@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/backUp.unity
+- path: Assets/Scenes/LightHouseField.unity
   isLoaded: 1
   isActive: 1

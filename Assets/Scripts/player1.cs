@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class player : MonoBehaviour {
+public class player1 : MonoBehaviour {
 
-    public GameController gameController;
+    public GameObject boat;
 
-	public float speed;
+    public float speed;
     public float angle;
 
 	private Rigidbody rb;
@@ -16,10 +17,10 @@ public class player : MonoBehaviour {
     public float fireRate = 1F;
     private float nextFire = 0.0F;
 
-    public GUIText barrelText;
+    public Text barrelText;
     public int barrelCount;
 
-    public GUIText hpText;
+    public Text hpText;
     public int healthPoint;
 
     // Use this for initialization
@@ -75,6 +76,9 @@ public class player : MonoBehaviour {
 		{
 			transform.Rotate(0, Time.deltaTime * angle, 0);
 		}
+
+        if (healthPoint <= 0)
+            Destroy(boat);
     }
 
     void Fire ()
@@ -84,19 +88,27 @@ public class player : MonoBehaviour {
             if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
-                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y + 5, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z, barrelSpawn.rotation.w)) as Rigidbody;
-                newBarrel.velocity = -15f * speed * barrelSpawn.right;
+                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y, barrelSpawn.position.z), barrelSpawn.rotation) as Rigidbody;
+                newBarrel.velocity = 15f * speed * barrelSpawn.right;
                 RemoveBarrel();
-                LowerHealthPoint(10);
             }
 
             if (Input.GetKey(KeyCode.Mouse1) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
-                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y + 5, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z + 30, barrelSpawn.rotation.w)) as Rigidbody;
-                newBarrel.velocity = -50f * barrelSpawn.right;
+                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z + 45, barrelSpawn.rotation.w)) as Rigidbody;
+                newBarrel.velocity = 50f * barrelSpawn.right;
                 RemoveBarrel();
             }
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Barrel_BG_A" || col.gameObject.name == "Barrel_BG_A(Clone)")
+        {
+            LowerHealthPoint(10);
+            Destroy(col.gameObject);
         }
     }
 }
