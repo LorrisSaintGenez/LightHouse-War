@@ -45,16 +45,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameController.cs" />
      <Compile Include="Assets\Scripts\Alexandrie.cs" />
+     <Compile Include="Assets\Scripts\AreaCapture.cs" />
      <Compile Include="Assets\Scripts\Buoyancy.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\RotateTower.cs" />
      <Compile Include="Assets\Scripts\cameraFollowUser.cs" />
      <Compile Include="Assets\Scripts\exitOnClick.cs" />
      <Compile Include="Assets\Scripts\lightMove.cs" />
      <Compile Include="Assets\Scripts\loadOnClick.cs" />
      <Compile Include="Assets\Scripts\player1.cs" />
-     <Compile Include="Assets\player2.cs" />
+     <Compile Include="Assets\Scripts\player2.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />

@@ -14,6 +14,8 @@ public class Alexandrie : MonoBehaviour {
 	public Light BaseThree;
 	public Light BaseFour;
 
+	public GameObject socle;
+
 	public Rigidbody Barrel;
 	public GameObject explosion;
 	public Transform SpawnTowerOne;
@@ -106,5 +108,7 @@ public class Alexandrie : MonoBehaviour {
 		BaseTwo.color = color;
 		BaseThree.color = color;
 		BaseFour.color = color;
+
+		socle.GetComponent<MeshRenderer> ().material.color = color;
 	}
 }
