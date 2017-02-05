@@ -37,7 +37,7 @@ public class Alexandrie : MonoBehaviour {
 	void Start () {
 		winner = 0;
 		changeUser (winner);
-		InvokeRepeating("TowerFire", 5, 5);
+		InvokeRepeating("TowerFire", 5, SpawnTime);
 	}
 	
 	// Update is called once per frame
@@ -56,12 +56,26 @@ public class Alexandrie : MonoBehaviour {
 		}
 
 	}
+		
 
 	void TowerFire(){
-		float force = Random.Range (20f, 50f);
-		Vector3 up = new Vector3 (0, Random.Range(20f, 40f), 0);
+		float force = Random.Range (50, 100);
+		Vector3 up = new Vector3 (0, Random.Range(35, 80), 0);
+		FireProjectile (force, SpawnTowerOne, up);
 
-		Vector3 vect = new Vector3 (0, 1, -1);
+		force = Random.Range (50, 100);
+		up = new Vector3 (0, Random.Range(35, 80), 0);
+		FireProjectile (force, SpawnTowerTwo, up);
+
+		force = Random.Range (50, 100);
+		up = new Vector3 (0, Random.Range(35, 80), 0);
+		FireProjectile (force, SpawnTowerThree, up);
+
+		force = Random.Range (50, 100);
+		up = new Vector3 (0, Random.Range(35, 80), 0);
+		FireProjectile (force, SpawnTowerFour, up);
+
+		/*Vector3 vect = new Vector3 (0, 1, -1);
 		Rigidbody newBarrel = Instantiate(Barrel, new Vector3(SpawnTowerOne.position.x, SpawnTowerOne.position.y, SpawnTowerOne.position.z), SpawnTowerOne.rotation) as Rigidbody;
 		Instantiate(explosion, new Vector3(SpawnTowerOne.position.x, SpawnTowerOne.position.y, SpawnTowerOne.position.z), SpawnTowerOne.rotation);
 		newBarrel.velocity = force * -SpawnTowerOne.forward + up;
@@ -80,9 +94,17 @@ public class Alexandrie : MonoBehaviour {
 		Rigidbody newBarrel3 = Instantiate(Barrel, new Vector3(SpawnTowerFour.position.x, SpawnTowerFour.position.y, SpawnTowerFour.position.z), SpawnTowerFour.rotation) as Rigidbody;
 		Instantiate(explosion, new Vector3(SpawnTowerFour.position.x, SpawnTowerFour.position.y, SpawnTowerFour.position.z), SpawnTowerFour.rotation);
 		print (SpawnTowerFour.forward);
-		newBarrel3.velocity = force * SpawnTowerFour.forward + up;
+		newBarrel3.velocity = force * SpawnTowerFour.forward + up;*/
 	}
 
+	void FireProjectile(float force, Transform Spawn, Vector3 up)
+	{
+		Rigidbody newBarrel3 = Instantiate(Barrel, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as Rigidbody;
+		newBarrel3.velocity = force * SpawnTowerFour.forward + up;
+		GameObject tmp = Instantiate(explosion, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as GameObject;
+		Object.Destroy (tmp, 3.0f);
+
+	}
 
 	void changeUser(int val){
 		winner = val;

@@ -37,16 +37,26 @@ public class player1 : MonoBehaviour {
         Fire();
     }
 
+	void addFire()
+	{
+		GameObject fire = Instantiate (ComplexFire,
+			new Vector3 (transform.position.x, transform.position.y + 1 + (100 - healthPoint) / 50, transform.position.z), barrelSpawn.rotation) as GameObject;
+		fire.transform.parent = transform;
+
+		Object.Destroy (fire, 5.0f);
+		Invoke (addFire, 5.0f);
+	}
+
     void LowerHealthPoint(int damages)
     {
         healthPoint -= damages;
 
-		GameObject fire = Instantiate (ComplexFire, new Vector3 (transform.position.x, transform.position.y + 1 + (100 - healthPoint) / 200, transform.position.z), barrelSpawn.rotation) as GameObject;
-		fire.transform.parent = transform;
-
+		addFire ();
 
         UpdateHealthPointText();
     }
+
+
 
     void UpdateHealthPointText()
     {

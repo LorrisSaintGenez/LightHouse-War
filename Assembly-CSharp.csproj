@@ -45,11 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Import\Plugins\Pixelplacement\iTween\iTween.cs" />
      <Compile Include="Assets\Scripts\Alexandrie.cs" />
      <Compile Include="Assets\Scripts\AreaCapture.cs" />
      <Compile Include="Assets\Scripts\Buoyancy.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\RotateTower.cs" />
+     <Compile Include="Assets\Scripts\WinOrLose.cs" />
      <Compile Include="Assets\Scripts\cameraFollowUser.cs" />
      <Compile Include="Assets\Scripts\exitOnClick.cs" />
      <Compile Include="Assets\Scripts\lightMove.cs" />
@@ -62,7 +64,7 @@
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
-     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\Import\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
