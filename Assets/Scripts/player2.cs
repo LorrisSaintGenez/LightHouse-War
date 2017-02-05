@@ -60,24 +60,31 @@ public class player2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        float translation = 0;
+        float rotation = 0;
+
         if (Input.GetKey(KeyCode.Z))
         {
-            rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+            //rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
             //transform.position -= transform.right * Time.deltaTime * speed;
+            translation = -speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            rb.AddForce(transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+            translation = speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(0, Time.deltaTime * -angle, 0);
+            rotation = -speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0, Time.deltaTime * angle, 0);
+            rotation = speed * Time.deltaTime;
         }
+
+        transform.Translate(translation, 0, 0);
+        transform.Rotate(0, rotation, 0);
 
         if (healthPoint <= 0)
             Destroy(boat);
@@ -90,7 +97,7 @@ public class player2 : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
-                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y, barrelSpawn.position.z), barrelSpawn.rotation) as Rigidbody;
+                Rigidbody newBarrel = Instantiate(barrel, barrelSpawn.position, barrelSpawn.rotation) as Rigidbody;
                 newBarrel.velocity = 25f * speed * barrelSpawn.right;
                 RemoveBarrel();
             }
@@ -98,7 +105,7 @@ public class player2 : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftControl) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
-                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, 45, barrelSpawn.rotation.w)) as Rigidbody;
+                Rigidbody newBarrel = Instantiate(barrel, barrelSpawn.position, new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, 45, barrelSpawn.rotation.w)) as Rigidbody;
                 newBarrel.velocity = 50f * barrelSpawn.right;
                 RemoveBarrel();
             }
@@ -109,6 +116,7 @@ public class player2 : MonoBehaviour
     {
         if (col.gameObject.tag == "Barrel")
         {
+            col.gameObject.SetActive(false);
             LowerHealthPoint(10);
             Destroy(col.gameObject);
         }

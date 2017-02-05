@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class player1 : MonoBehaviour {
 
@@ -70,24 +71,51 @@ public class player1 : MonoBehaviour {
 			rb.angularVelocity = Vector3.zero; 
 		}
 
-		if (Input.GetKey(KeyCode.UpArrow))
+        /*if (Input.GetKey(KeyCode.UpArrow))
 		{
+            //rb.velocity += transform.right * Time.deltaTime * speed;
 			rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
 			//transform.position -= transform.right * Time.deltaTime * speed;
 		}
 		else if (Input.GetKey(KeyCode.DownArrow))
 		{
-			rb.AddForce(transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+			rb.AddForce(transform.right * Time.deltaTime * speed * 2, ForceMode.Impulse);
 		}
 
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			transform.Rotate(0, Time.deltaTime * -angle, 0);
-		}
-		else if (Input.GetKey(KeyCode.RightArrow))
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
 		{
 			transform.Rotate(0, Time.deltaTime * angle, 0);
-		}
+		}*/
+
+        float translation = 0;
+        float rotation = 0;
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            //rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
+            //transform.position -= transform.right * Time.deltaTime * speed;
+            translation = -speed * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            translation = speed * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            rotation = -speed * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            rotation = speed * Time.deltaTime;
+        }
+
+        transform.Translate(translation, 0, 0);
+        transform.Rotate(0, rotation, 0);
 
         if (healthPoint <= 0)
             Destroy(boat);
@@ -100,7 +128,7 @@ public class player1 : MonoBehaviour {
             if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
-                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y, barrelSpawn.position.z), barrelSpawn.rotation) as Rigidbody;
+                Rigidbody newBarrel = Instantiate(barrel, barrelSpawn.position, barrelSpawn.rotation) as Rigidbody;
                 newBarrel.velocity = 15f * speed * barrelSpawn.right;
                 RemoveBarrel();
             }
@@ -108,8 +136,8 @@ public class player1 : MonoBehaviour {
             if (Input.GetKey(KeyCode.Mouse1) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
-                Rigidbody newBarrel = Instantiate(barrel, new Vector3(barrelSpawn.position.x, barrelSpawn.position.y, barrelSpawn.position.z), new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z + 45, barrelSpawn.rotation.w)) as Rigidbody;
-                newBarrel.velocity = 50f * barrelSpawn.right;
+                Rigidbody newBarrel = Instantiate(barrel, barrelSpawn.position, new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z + 45, barrelSpawn.rotation.w)) as Rigidbody;
+                newBarrel.velocity = 50f * speed * barrelSpawn.right;
                 RemoveBarrel();
             }
 
