@@ -30,7 +30,7 @@ public class Alexandrie : MonoBehaviour {
 
     public GameController sphereOwner;
 
-	// 0 no one, 1 player One, 2 player Two
+	// 0 no One, 1 player One, 2 player Two
 	private int winner;
 
 	// Use this for initialization
@@ -42,13 +42,18 @@ public class Alexandrie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        string owner = sphereOwner.getOwner();
-		if (owner == null)
+		if (sphereOwner.getOwner() == null)
+		{
 			changeUser (0);
-        else if (owner == "Boat_Player_One")
+		}
+        else if (sphereOwner.getOwner() == "Boat_Player_One")
+        {
             changeUser (1);
+		}
 		else
+		{
 			changeUser (2);
+		}
 
 	}
 
