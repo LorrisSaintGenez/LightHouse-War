@@ -13,6 +13,7 @@ GameObject:
   - 64: {fileID: 6400000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 114000010290651488}
+  - 114: {fileID: 114000014248490986}
   m_Layer: 0
   m_Name: Barrel_BG_A
   m_TagString: Barrel A
@@ -122,3 +123,14 @@ MonoBehaviour:
   slicesPerAxis: 2
   isConcave: 0
   voxelsLimit: 16
+--- !u!114 &114000014248490986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07922b74af010d54cac4e20e5bbb4552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

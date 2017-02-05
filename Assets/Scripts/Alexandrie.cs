@@ -14,10 +14,14 @@ public class Alexandrie : MonoBehaviour {
 	public Light BaseThree;
 	public Light BaseFour;
 
+	public AudioSource explosionSound;
+
 	public GameObject socle;
 
 	public Rigidbody Barrel;
 	public GameObject explosion;
+	public GameObject FireComplex;
+
 	public Transform SpawnTowerOne;
 
 	public Transform SpawnTowerTwo;
@@ -59,51 +63,36 @@ public class Alexandrie : MonoBehaviour {
 		
 
 	void TowerFire(){
-		float force = Random.Range (50, 100);
+		float force = Random.Range (200, 1000);
 		Vector3 up = new Vector3 (0, Random.Range(35, 80), 0);
 		FireProjectile (force, SpawnTowerOne, up);
 
-		force = Random.Range (50, 100);
+		force = Random.Range (200, 1000);
 		up = new Vector3 (0, Random.Range(35, 80), 0);
 		FireProjectile (force, SpawnTowerTwo, up);
 
-		force = Random.Range (50, 100);
+		force = Random.Range (200, 1000);
 		up = new Vector3 (0, Random.Range(35, 80), 0);
 		FireProjectile (force, SpawnTowerThree, up);
 
-		force = Random.Range (50, 100);
+		force = Random.Range (200, 1000);
 		up = new Vector3 (0, Random.Range(35, 80), 0);
 		FireProjectile (force, SpawnTowerFour, up);
-
-		/*Vector3 vect = new Vector3 (0, 1, -1);
-		Rigidbody newBarrel = Instantiate(Barrel, new Vector3(SpawnTowerOne.position.x, SpawnTowerOne.position.y, SpawnTowerOne.position.z), SpawnTowerOne.rotation) as Rigidbody;
-		Instantiate(explosion, new Vector3(SpawnTowerOne.position.x, SpawnTowerOne.position.y, SpawnTowerOne.position.z), SpawnTowerOne.rotation);
-		newBarrel.velocity = force * -SpawnTowerOne.forward + up;
-
-		Vector3 vect1 = new Vector3 (1, 1, 0);
-		Rigidbody newBarrel1 = Instantiate(Barrel, new Vector3(SpawnTowerTwo.position.x, SpawnTowerTwo.position.y, SpawnTowerTwo.position.z), SpawnTowerTwo.rotation) as Rigidbody;
-		Instantiate (explosion, new Vector3 (SpawnTowerTwo.position.x, SpawnTowerTwo.position.y, SpawnTowerTwo.position.z), SpawnTowerTwo.rotation);
-		newBarrel1.velocity = force * SpawnTowerTwo.right + up;
-
-		Vector3 vect2 = new Vector3 (-1, 1, 0);
-		Rigidbody newBarrel2 = Instantiate(Barrel, new Vector3(SpawnTowerThree.position.x, SpawnTowerThree.position.y, SpawnTowerThree.position.z), SpawnTowerThree.rotation) as Rigidbody;
-		Instantiate(explosion, new Vector3(SpawnTowerThree.position.x, SpawnTowerThree.position.y, SpawnTowerThree.position.z), SpawnTowerThree.rotation);
-		newBarrel2.velocity = force * -SpawnTowerThree.right + up;
-
-		Vector3 vect3 = new Vector3 (0 ,1, 1);
-		Rigidbody newBarrel3 = Instantiate(Barrel, new Vector3(SpawnTowerFour.position.x, SpawnTowerFour.position.y, SpawnTowerFour.position.z), SpawnTowerFour.rotation) as Rigidbody;
-		Instantiate(explosion, new Vector3(SpawnTowerFour.position.x, SpawnTowerFour.position.y, SpawnTowerFour.position.z), SpawnTowerFour.rotation);
-		print (SpawnTowerFour.forward);
-		newBarrel3.velocity = force * SpawnTowerFour.forward + up;*/
 	}
 
 	void FireProjectile(float force, Transform Spawn, Vector3 up)
 	{
 		Rigidbody newBarrel3 = Instantiate(Barrel, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as Rigidbody;
 		newBarrel3.velocity = force * SpawnTowerFour.forward + up;
+
 		GameObject tmp = Instantiate(explosion, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as GameObject;
 		Object.Destroy (tmp, 3.0f);
 
+		GameObject fireAttach = Instantiate(FireComplex, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as GameObject;
+		fireAttach.transform.parent = newBarrel3.transform;
+		Object.Destroy (fireAttach, 5.0f);
+
+		GetComponent<AudioSource> ().Play ();
 	}
 
 	void changeUser(int val){
