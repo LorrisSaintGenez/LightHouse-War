@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Alexandrie.cs" />
      <Compile Include="Assets\Scripts\AreaCapture.cs" />
      <Compile Include="Assets\Scripts\Buoyancy.cs" />
+     <Compile Include="Assets\Scripts\ForceDown.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\RotateTower.cs" />
      <Compile Include="Assets\Scripts\WinOrLose.cs" />
@@ -82,6 +83,8 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{47446C04-0A81-8D28-8E6D-B590F2E535D3}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{110C4DC6-A8FE-BCEE-76A6-9FA81A2147A9}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
