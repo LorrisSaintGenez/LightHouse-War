@@ -21,7 +21,7 @@ public class player2 : MonoBehaviour
     public Text barrelText;
     public int barrelCount;
 
-    public Text hpText;
+    public Slider healthBar;
     public int healthPoint;
 
     // Use this for initialization
@@ -43,7 +43,7 @@ public class player2 : MonoBehaviour
 
     void UpdateHealthPointText()
     {
-        hpText.text = "HP: " + healthPoint;
+        healthBar.value = 100 - healthPoint;
     }
 
     void RemoveBarrel()
