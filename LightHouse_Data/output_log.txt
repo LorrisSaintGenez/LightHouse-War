@@ -1,0 +1,96 @@
+Initialize engine version: 5.5.1f1 (88d00a7498cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 660M (ID=0xfd4)
+    Vendor:   NVIDIA
+    VRAM:     2017 MB
+    Driver:   10.18.10.4358
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.365 seconds
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\Unity Projects\Fil_Rouge\LightHouse-War\LightHouse_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 59Hz; virtual: 3840x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 6.274695 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: f4 -> priority: 1 
+  Thread -> id: 30d8 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 10.363747 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2160.
+Total: 1.149056 ms (FindLiveObjects: 0.212534 ms CreateObjectMapping: 0.095362 ms MarkObjects: 0.811224 ms  DeleteObjects: 0.024375 ms)
+
+[Buoyancy.cs] Name="Boat_Player_One" volume=25.0, mass=50.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Boat_Player_Two" volume=25.0, mass=50.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Barrel_BG_B(Clone)" volume=0.2, mass=100.0, density=500.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Barrel_BG_B(Clone)" volume=0.2, mass=100.0, density=500.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Barrel_BG_B(Clone)" volume=0.2, mass=100.0, density=500.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Barrel_BG_B(Clone)" volume=0.2, mass=100.0, density=500.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.780965 ms
+
+Unloading 220 unused Assets to reduce memory usage. Loaded Objects now: 375.
+Total: 4.758728 ms (FindLiveObjects: 0.312173 ms CreateObjectMapping: 0.200988 ms MarkObjects: 1.469783 ms  DeleteObjects: 2.768939 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.127247 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2192.
+Total: 2.202750 ms (FindLiveObjects: 0.396845 ms CreateObjectMapping: 0.128290 ms MarkObjects: 1.636133 ms  DeleteObjects: 0.038487 ms)
+
+[Buoyancy.cs] Name="Boat_Player_One" volume=25.0, mass=50.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Boat_Player_Two" volume=25.0, mass=50.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Buoyancy.cs] Name="Barrel_BG_A(Clone)" volume=5.0, mass=10.0, density=2.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+

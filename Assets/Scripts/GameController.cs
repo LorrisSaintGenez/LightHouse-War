@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     public Vector3 position;
     public float radius;
@@ -11,11 +13,32 @@ public class GameController : MonoBehaviour {
     public Text timer_player_1;
     public Text timer_player_2;
 
+    public GameObject boat1;
+    public GameObject boat2;
+
+    public Canvas CanvasEndPlayer1;
+    public Canvas CanvasEndPlayer2;
+
+    public RawImage ImageEndPlayer1;
+    public RawImage ImageEndPlayer2;
+
+    public Texture victory;
+    public Texture defeat;
+
     private int count = 0;
     private float timeLeft;
 
     private Text ownerText;
     private string owner;
+
+    private int buttonWidth = 200;
+    private int buttonHeight = 50;
+    private int groupWidth = 200;
+    private int groupHeight = 170;
+
+    private bool paused = false;
+    private bool gameEnd = false;
+
 
     void Start()
     {
@@ -40,6 +63,47 @@ public class GameController : MonoBehaviour {
             timeLeft = timeCapture;
             ownerText.text = "Time: " + Mathf.Round(timeLeft);
             owner = null;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            paused = !paused;
+        }
+
+        if (paused)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
+
+        if (gameEnd)
+        {
+            Time.timeScale = 0;
+            if (Input.GetKey(KeyCode.Return))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
+    }
+
+    void OnGUI()
+    {
+        if (paused)
+        {
+            GUI.BeginGroup(new Rect(((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
+            if (GUI.Button(new Rect(0, 0, buttonWidth, buttonHeight), "Main Menu"))
+            {
+                SceneManager.LoadScene(0);
+            }
+            if (GUI.Button(new Rect(0, 60, buttonWidth, buttonHeight), "Resume"))
+            {
+                paused = false;
+            }
+
+            if (GUI.Button(new Rect(0, 120, buttonWidth, buttonHeight), "Quit Game"))
+            {
+                Application.Quit();
+            }
+            GUI.EndGroup();
         }
     }
 
@@ -92,6 +156,23 @@ public class GameController : MonoBehaviour {
 
     public void GameOver(string winner)
     {
-        Debug.Log("The winner is: " + winner);
+        if (boat1.name == winner)
+        {
+            ImageEndPlayer1.texture = victory;
+            ImageEndPlayer2.texture = defeat;
+
+            CanvasEndPlayer1.planeDistance = 1;
+            CanvasEndPlayer2.planeDistance = 1;
+        }
+        else
+        {
+            ImageEndPlayer1.texture = defeat;
+            ImageEndPlayer2.texture = victory;
+
+            CanvasEndPlayer1.planeDistance = 1;
+            CanvasEndPlayer2.planeDistance = 1;
+        }
+
+        gameEnd = true;
     }
 }
