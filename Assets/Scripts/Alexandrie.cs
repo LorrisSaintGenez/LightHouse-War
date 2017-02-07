@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Alexandrie : MonoBehaviour {
 
-	public Light spotlightOne;
+    public Light[] lights;
+	/*public Light spotlightOne;
 	public Light spotlightTwo;
 	public Light spotlightThree;
 	public Light spotlightFour;
@@ -12,36 +13,36 @@ public class Alexandrie : MonoBehaviour {
 	public Light BaseOne;
 	public Light BaseTwo;
 	public Light BaseThree;
-	public Light BaseFour;
+	public Light BaseFour;*/
 
 	public AudioSource explosionSound;
-
-	public GameObject socle;
 
 	public Rigidbody Barrel;
 	public GameObject explosion;
 	public GameObject FireComplex;
 
-	public Transform SpawnTowerOne;
-
+    public Transform[] spawnTowers;
+	/*public Transform SpawnTowerOne;
 	public Transform SpawnTowerTwo;
-
 	public Transform SpawnTowerThree;
-
-	public Transform SpawnTowerFour;
+	public Transform SpawnTowerFour;*/
 
 	public float SpawnTime;
 
     public GameController sphereOwner;
 
+    public GameObject waterFlood;
+
 	// 0 no One, 1 player One, 2 player Two
 	private int winner;
+
+    private bool waterOverflow;
 
 	// Use this for initialization
 	void Start () {
 		winner = 0;
 		changeUser (winner);
-		InvokeRepeating("TowerFire", 5, SpawnTime);
+        waterOverflow = false;
 	}
 	
 	// Update is called once per frame
@@ -59,11 +60,37 @@ public class Alexandrie : MonoBehaviour {
 			changeUser (2);
 		}
 
-	}
-		
+        if (waterFlood.transform.position.y == 0)
+        {
+            if (!waterOverflow)
+            {
+                waterOverflow = true;
+                InvokeRepeating("TowerFire", 5, SpawnTime);
+            }
+        }
+    }
 
-	void TowerFire(){
-		float force = Random.Range (200, 1000);
+    IEnumerator fireRoutine(int delay, Transform spawnTower)
+    {
+        yield return new WaitForSeconds(delay);
+
+        float force = Random.Range(200, 1000);
+        Vector3 up = new Vector3(0, Random.Range(35, 80), 0);
+        FireProjectile(force, spawnTower, up);
+    }
+	
+    // COROUTINE	
+
+	void TowerFire()
+    {
+
+        foreach (Transform spawnTower in spawnTowers)
+        {
+            int delay = Random.Range(2, 5);
+            StartCoroutine(fireRoutine(delay, spawnTower));
+        }
+
+		/*float force = Random.Range (200, 1000);
 		Vector3 up = new Vector3 (0, Random.Range(35, 80), 0);
 		FireProjectile (force, SpawnTowerOne, up);
 
@@ -77,13 +104,15 @@ public class Alexandrie : MonoBehaviour {
 
 		force = Random.Range (200, 1000);
 		up = new Vector3 (0, Random.Range(35, 80), 0);
-		FireProjectile (force, SpawnTowerFour, up);
+		FireProjectile (force, SpawnTowerFour, up);*/
+
+
 	}
 
 	void FireProjectile(float force, Transform Spawn, Vector3 up)
 	{
 		Rigidbody newBarrel3 = Instantiate(Barrel, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as Rigidbody;
-		newBarrel3.velocity = force * SpawnTowerFour.forward + up;
+		newBarrel3.velocity = force * Spawn.forward + up;
 
 		GameObject tmp = Instantiate(explosion, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as GameObject;
 		Object.Destroy (tmp, 3.0f);
@@ -110,7 +139,11 @@ public class Alexandrie : MonoBehaviour {
 
 	void ApplyColor(Color color)
 	{
-		spotlightOne.color = color;
+        foreach(Light l in lights)
+        {
+            l.color = color;
+        }
+		/*spotlightOne.color = color;
 		spotlightTwo.color = color;
 		spotlightThree.color = color;
 		spotlightFour.color = color;
@@ -118,8 +151,6 @@ public class Alexandrie : MonoBehaviour {
 		BaseOne.color = color;
 		BaseTwo.color = color;
 		BaseThree.color = color;
-		BaseFour.color = color;
-
-		socle.GetComponent<MeshRenderer> ().material.color = color;
+		BaseFour.color = color;*/
 	}
 }

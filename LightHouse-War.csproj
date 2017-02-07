@@ -94,6 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Import\Plugins\Pixelplacement\iTween\iTween.cs" />
+    <Compile Include="Assets\LightningBolt\LightningBoltScript.cs" />
+    <Compile Include="Assets\Overflow.cs" />
     <Compile Include="Assets\Scripts\Alexandrie.cs" />
     <Compile Include="Assets\Scripts\AreaCapture.cs" />
     <Compile Include="Assets\Scripts\Buoyancy.cs" />
@@ -110,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Import\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
+    <None Include="Assets\LightningBolt\Readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />

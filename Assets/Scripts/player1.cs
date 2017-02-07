@@ -14,6 +14,7 @@ public class player1 : MonoBehaviour {
 
 	public GameObject ComplexFire;
 	public GameObject ExplosionBig;
+	public GameObject trainerDeFeu;
 
     public Rigidbody barrel;
     public Transform barrelSpawn;
@@ -69,9 +70,15 @@ public class player1 : MonoBehaviour {
         UpdateBarrelCount();
     }
 
+    void AddBarrel()
+    {
+        barrelCount += 5;
+        UpdateBarrelCount();
+    }
+
     void UpdateBarrelCount()
     {
-        barrelText.text = "Barrels: " + barrelCount;
+        barrelText.text = "x" + barrelCount;
     }
 
     // Update is called once per frame
@@ -106,22 +113,26 @@ public class player1 : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
+			rb.AddForce (-rb.transform.right * speed * 10);
             //rb.AddForce(-transform.right * Time.deltaTime * speed, ForceMode.Impulse);
             //transform.position -= transform.right * Time.deltaTime * speed;
-            translation = -speed * Time.deltaTime;
+            //translation = -speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            translation = speed * Time.deltaTime;
+			rb.AddForce (rb.transform.right * speed * 10);
+            //translation = speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rotation = -speed * Time.deltaTime;
+			rb.transform.Rotate (new Vector3 (0f, -speed, 0f) * Time.deltaTime);
+            //rotation = -speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rotation = speed * Time.deltaTime;
+			rb.transform.Rotate (new Vector3 (0f, speed, 0f) * Time.deltaTime);
+            //rotation = speed * Time.deltaTime;
         }
 
         transform.Translate(translation, 0, 0);
@@ -170,8 +181,10 @@ public class player1 : MonoBehaviour {
 	{
 		Rigidbody newBarrel3 = Instantiate(barrel, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as Rigidbody;
 		newBarrel3.velocity = (speed * 0.2f) * force * barrelSpawn.right + up;
-		/*GameObject tmp = Instantiate(explosion, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as GameObject;
-		Object.Destroy (tmp, 3.0f);*/
+
+		GameObject tmp = Instantiate(trainerDeFeu, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as GameObject;
+		tmp.transform.parent = newBarrel3.transform;
+		Object.Destroy (tmp, 3.0f);
 
 	}
 
@@ -182,6 +195,12 @@ public class player1 : MonoBehaviour {
             LowerHealthPoint(10);
 			Explosion ();
             Destroy(col.gameObject);
+        }
+
+        if (col.gameObject.name.StartsWith("treasure_box"))
+        {
+            Destroy(col.gameObject);
+            AddBarrel();
         }
     }
 

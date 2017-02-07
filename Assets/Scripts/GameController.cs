@@ -25,6 +25,11 @@ public class GameController : MonoBehaviour
     public Texture victory;
     public Texture defeat;
 
+    public GameObject waterFlood;
+
+    public GameObject collectableChest;
+    public Vector3[] chestSpawnPoints;
+
     private int count = 0;
     private float timeLeft;
 
@@ -38,11 +43,12 @@ public class GameController : MonoBehaviour
 
     private bool paused = false;
     private bool gameEnd = false;
-
+    private bool waterOverflow = false;
 
     void Start()
     {
         timeLeft = timeCapture;
+		GetComponent<AudioSource> ().Play ();
         owner = null;
         ownerText = timer_player_1;
     }
@@ -83,6 +89,21 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
         }
+
+        if (waterFlood.transform.position.y == 0)
+        {
+            if (!waterOverflow)
+            {
+                waterOverflow = true;
+                InvokeRepeating("spawnChest", 5, 15);
+            }
+        }
+    }
+
+    void spawnChest()
+    {
+        int randomSpawnPoint = Random.Range(0, chestSpawnPoints.Length);
+        Instantiate(collectableChest, chestSpawnPoints[randomSpawnPoint], new Quaternion(0f, 0f, 0f, 0f));
     }
 
     void OnGUI()
