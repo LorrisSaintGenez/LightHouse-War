@@ -146,12 +146,12 @@ public class player1 : MonoBehaviour {
     {
         if (barrelCount > 0)
         {
+			float force = 45;
+			Vector3 up = new Vector3 (0, 10, 0);
             if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
 
-				float force = 50;
-				Vector3 up = new Vector3 (0, 50, 0);
 				FireProjectile (force, barrelSpawn, up);
                 /*Rigidbody newBarrel = Instantiate(barrel, barrelSpawn.position, barrelSpawn.rotation) as Rigidbody;*/
                 /*newBarrel.velocity = 15f * speed * barrelSpawn.right;*/
@@ -162,8 +162,6 @@ public class player1 : MonoBehaviour {
             {
                 nextFire = Time.time + fireRate;
 
-				float force = 50;
-				Vector3 up = new Vector3 (0, 10, 0);
 				FireProjectile (force, barrelSpawn, up);
                 /*Rigidbody newBarrel = Instantiate(barrel, barrelSpawn.position, new Quaternion(barrelSpawn.rotation.x, barrelSpawn.rotation.y, barrelSpawn.rotation.z + 45, barrelSpawn.rotation.w)) as Rigidbody;
                 newBarrel.velocity = 50f * speed * barrelSpawn.right;*/
@@ -179,8 +177,12 @@ public class player1 : MonoBehaviour {
 
 	void FireProjectile(float force, Transform Spawn, Vector3 up)
 	{
+		/*Rigidbody newBarrel3 = Instantiate(barrel, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as Rigidbody;
+		newBarrel3.velocity = (speed * 0.2f) * force * barrelSpawn.right + up;*/
 		Rigidbody newBarrel3 = Instantiate(barrel, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as Rigidbody;
-		newBarrel3.velocity = (speed * 0.2f) * force * barrelSpawn.right + up;
+		newBarrel3.velocity = (speed * 0.02f) * force * barrelSpawn.right + up;
+		print("fire");
+		Object.Destroy (newBarrel3, 10.0f);
 
 		GameObject tmp = Instantiate(trainerDeFeu, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as GameObject;
 		tmp.transform.parent = newBarrel3.transform;
@@ -192,9 +194,9 @@ public class player1 : MonoBehaviour {
     {
         if (col.gameObject.tag == "Barrel")
         {
-            LowerHealthPoint(10);
 			Explosion ();
-            Destroy(col.gameObject);
+			Destroy(col.gameObject);
+            LowerHealthPoint(10);
         }
 
         if (col.gameObject.name.StartsWith("treasure_box"))

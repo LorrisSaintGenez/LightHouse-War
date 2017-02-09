@@ -1,8 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\loadOnClick.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\sp.cs">
     <Files>
       <File FileName="Assets\Scripts\loadOnClick.cs" Line="12" Column="1" />
+      <File FileName="Assets\Scripts\player1.cs" Line="81" Column="1" />
+      <File FileName="Assets\Scripts\player2.cs" Line="162" Column="5" />
+      <File FileName="Assets\Scripts\iaEasy.cs" Line="82" Column="14" />
+      <File FileName="Assets\Scripts\minesaI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\sp.cs" Line="13" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

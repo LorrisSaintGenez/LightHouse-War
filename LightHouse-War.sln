@@ -1,15 +1,15 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouse-War", "Assembly-CSharp-firstpass.csproj", "{47446C04-0A81-8D28-8E6D-B590F2E535D3}"
+# Visual Studio 2008
+
+Project("{B03386E3-C545-9EB6-CF84-3AF39ED23C1E}") = "LightHouse-War", "Assembly-CSharp-firstpass.csproj", "{47446C04-0A81-8D28-8E6D-B590F2E535D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouse-War", "Assembly-CSharp.csproj", "{19389977-5D29-F311-8C0D-9436E4C2808D}"
+Project("{B03386E3-C545-9EB6-CF84-3AF39ED23C1E}") = "LightHouse-War", "Assembly-CSharp.csproj", "{19389977-5D29-F311-8C0D-9436E4C2808D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouse-War", "Assembly-CSharp-Editor.csproj", "{FCA99A43-8868-11F5-9994-19ADB6474C3F}"
+Project("{B03386E3-C545-9EB6-CF84-3AF39ED23C1E}") = "LightHouse-War", "Assembly-CSharp-Editor.csproj", "{FCA99A43-8868-11F5-9994-19ADB6474C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouse-War", "Assembly-UnityScript-firstpass.unityproj", "{110C4DC6-A8FE-BCEE-76A6-9FA81A2147A9}"
+Project("{B03386E3-C545-9EB6-CF84-3AF39ED23C1E}") = "LightHouse-War", "Assembly-UnityScript-firstpass.unityproj", "{110C4DC6-A8FE-BCEE-76A6-9FA81A2147A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouse-War", "Assembly-UnityScript.unityproj", "{B9F12191-F217-013C-CE7A-6C6575E39A88}"
+Project("{B03386E3-C545-9EB6-CF84-3AF39ED23C1E}") = "LightHouse-War", "Assembly-UnityScript.unityproj", "{B9F12191-F217-013C-CE7A-6C6575E39A88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
