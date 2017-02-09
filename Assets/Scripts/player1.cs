@@ -135,7 +135,7 @@ public class player1 : MonoBehaviour {
             //rotation = speed * Time.deltaTime;
         }
 
-        transform.Translate(translation, 0, 0);
+        //transform.Translate(translation, 0, 0);
         transform.Rotate(0, rotation, 0);
 
         if (healthPoint <= 0)

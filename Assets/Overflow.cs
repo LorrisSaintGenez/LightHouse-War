@@ -29,13 +29,10 @@ public class Overflow : MonoBehaviour {
     {
         float waterLevelUp = 0.25f;
         waterLevel.transform.position = new Vector3(waterLevel.transform.position.x, waterLevel.transform.position.y + waterLevelUp, waterLevel.transform.position.z);
-        if (waterLevel.transform.position.y >= -100)
+        borders.transform.position = new Vector3(borders.transform.position.x, borders.transform.position.y + waterLevelUp, borders.transform.position.z);
+        foreach (GameObject b in boats)
         {
-            borders.transform.position = new Vector3(borders.transform.position.x, borders.transform.position.y + waterLevelUp, borders.transform.position.z);
-            foreach (GameObject b in boats)
-            {
-                b.transform.position = new Vector3(b.transform.position.x, b.transform.position.y + waterLevelUp, b.transform.position.z);
-            }
+            b.transform.position = new Vector3(b.transform.position.x, b.transform.position.y + waterLevelUp, b.transform.position.z);
         }
     }
 

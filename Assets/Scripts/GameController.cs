@@ -13,6 +13,12 @@ public class GameController : MonoBehaviour
     public Text timer_player_1;
     public Text timer_player_2;
 
+	public Text timer_general;
+	public float chronos;
+
+	private int minutes;
+	private int seconds;
+
     public GameObject boat1;
     public GameObject boat2;
 
@@ -51,11 +57,21 @@ public class GameController : MonoBehaviour
 		GetComponent<AudioSource> ().Play ();
         owner = null;
         ownerText = timer_player_1;
+		minutes = Mathf.FloorToInt(chronos / 60F);
+		seconds = Mathf.FloorToInt (chronos - minutes * 60);
+		timer_general.text = string.Format ("{0:0}:{1:00}", minutes, seconds);
     }
 
     void Update()
     {
-        if (timeLeft < 0)
+
+		chronos -= Time.deltaTime;
+
+		if (chronos < 0) {
+			GameOver("");
+		}
+
+		if (timeLeft < 0)
         {
             GameOver(owner);
         }
@@ -108,6 +124,10 @@ public class GameController : MonoBehaviour
 
     void OnGUI()
     {
+		minutes = Mathf.FloorToInt(chronos / 60F);
+		seconds = Mathf.FloorToInt (chronos - minutes * 60);
+		timer_general.text = string.Format ("{0:0}:{1:00}", minutes, seconds);
+
         if (paused)
         {
             GUI.BeginGroup(new Rect(((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
@@ -177,22 +197,19 @@ public class GameController : MonoBehaviour
 
     public void GameOver(string winner)
     {
-        if (boat1.name == winner)
-        {
-            ImageEndPlayer1.texture = victory;
-            ImageEndPlayer2.texture = defeat;
+		if (boat1.name == winner) {
+			ImageEndPlayer1.texture = victory;
+			ImageEndPlayer2.texture = defeat;
+		} else if (boat2.name == winner) {
+			ImageEndPlayer1.texture = defeat;
+			ImageEndPlayer2.texture = victory;
+		} else {
+			ImageEndPlayer1.texture = defeat;
+			ImageEndPlayer2.texture = defeat;
+		}
 
-            CanvasEndPlayer1.planeDistance = 1;
-            CanvasEndPlayer2.planeDistance = 1;
-        }
-        else
-        {
-            ImageEndPlayer1.texture = defeat;
-            ImageEndPlayer2.texture = victory;
-
-            CanvasEndPlayer1.planeDistance = 1;
-            CanvasEndPlayer2.planeDistance = 1;
-        }
+		CanvasEndPlayer1.planeDistance = 1;
+		CanvasEndPlayer2.planeDistance = 1;
 
         gameEnd = true;
     }
