@@ -35,7 +35,6 @@ public class iaStupid : MonoBehaviour {
 	void Start () {
 		myRender = GetComponent<Renderer>();
 		rb = GetComponent<Rigidbody>();
-		print ("ok");
 		count = 0;
 		isPause = false;
 
@@ -47,23 +46,19 @@ public class iaStupid : MonoBehaviour {
 		if (dead) {
 			return;
 		}
-		//rb.transform = agent.transform;
 		fpsTargetDistanceOne = Vector3.Distance(targets[0].position, transform.position);
 		fpsTargetDistanceTwo = Vector3.Distance(targets[1].position, transform.position);
 		if (fpsTargetDistanceOne < attackDistance) {
 			myRender.material.color = Color.red;
 			lookAtPlayer (false, 0);
 			Attack ();
-			print ("Attack");
 		} else if (fpsTargetDistanceTwo < attackDistance) {
 			myRender.material.color = Color.red;
 			lookAtPlayer (false, 1);
 			Attack ();
-			print ("Attack");
 		} else if (fpsTargetDistanceOne < enemyLookDistance) {
 			myRender.material.color = Color.yellow;
 			lookAtPlayer (true, 0);
-			print ("look at target ");
 			if (count > 200) {
 				count = 0;
 				float force = 20;
@@ -74,7 +69,6 @@ public class iaStupid : MonoBehaviour {
 		} else if (fpsTargetDistanceTwo < enemyLookDistance) {
 			myRender.material.color = Color.yellow;
 			lookAtPlayer (true, 1);
-			print ("look at target ");
 			if (count > 200) {
 				count = 0;
 				float force = 20;
@@ -85,13 +79,10 @@ public class iaStupid : MonoBehaviour {
 		} else {
 			myRender.material.color = Color.blue;
 		}
-		/*rb.velocity = agent.velocity;
-		agent.nextPosition = rb.position;*/
 	}
 
 	void lookAtPlayer(bool stop, int index){
 		if (stop) {
-			print ("case vitesse");
 			rb.velocity = Vector3.zero;
 			rb.angularVelocity = Vector3.zero;
 		}
@@ -103,10 +94,8 @@ public class iaStupid : MonoBehaviour {
 
 	void Attack(){
 		if (rb.velocity.y > 50.0f) {
-			print("back" + rb.velocity.y);
 			rb.AddForce (transform.right*250);
 		} else {
-			print("front");
 			rb.AddForce (-transform.right*250*10);
 		}
 	}
@@ -115,9 +104,7 @@ public class iaStupid : MonoBehaviour {
 	{
 		Rigidbody newBarrel3 = Instantiate(barrel, new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as Rigidbody;
 		newBarrel3.velocity = (speed * 0.02f) * force * barrelSpawn.right + up;
-		print("fire");
 		yield return new WaitForSeconds (0.1f);
-		print("cgi");
 		if (newBarrel3 != null) {
 			GameObject tmp = Instantiate (trainerDeFeu, new Vector3 (Spawn.position.x, Spawn.position.y, Spawn.position.z), Spawn.rotation) as GameObject;
 			tmp.transform.parent = newBarrel3.transform;

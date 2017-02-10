@@ -73,15 +73,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-UnityScript-firstpass">
       <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
     </Reference>
@@ -95,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Assets\Import\Plugins\Pixelplacement\iTween\iTween.cs" />
     <Compile Include="Assets\LightningBolt\LightningBoltScript.cs" />
+    <Compile Include="Assets\LoadSoloMode.cs" />
     <Compile Include="Assets\Overflow.cs" />
     <Compile Include="Assets\Scripts\Alexandrie.cs" />
     <Compile Include="Assets\Scripts\AreaCapture.cs" />
@@ -105,10 +97,14 @@
     <Compile Include="Assets\Scripts\WinOrLose.cs" />
     <Compile Include="Assets\Scripts\cameraFollowUser.cs" />
     <Compile Include="Assets\Scripts\exitOnClick.cs" />
+    <Compile Include="Assets\Scripts\iaEasy.cs" />
+    <Compile Include="Assets\Scripts\iaStupid.cs" />
     <Compile Include="Assets\Scripts\lightMove.cs" />
     <Compile Include="Assets\Scripts\loadOnClick.cs" />
+    <Compile Include="Assets\Scripts\minesaI.cs" />
     <Compile Include="Assets\Scripts\player1.cs" />
     <Compile Include="Assets\Scripts\player2.cs" />
+    <Compile Include="Assets\Scripts\sp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Import\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />

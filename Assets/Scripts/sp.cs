@@ -1,14 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class sp : MonoBehaviour {
 
-	public GameObject[] listOfIa;
+    public Canvas CanvasEndPlayer1;
+    public RawImage ImageEndPlayer1;
+
+    public Texture victory;
+    public Texture defeat;
+
+    public Slider healthBar;
+
+    public GameObject[] listOfIa;
+
+    private bool gameOver;
+
 	// Use this for initialization
 	void Start () {
-		print ("win script start");
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,13 +33,37 @@ public class sp : MonoBehaviour {
 			}
 		}
 
+        if (healthBar.value >= 100)
+        {
+            PlayerHaveLost();
+            gameOver = true;
+        }
+
 		if (win) {
-			PLayerHaveWin ();
-		}
+            Time.timeScale = 0;
+			PlayerHaveWin ();
+            gameOver = true;
+        }
+
+        if (gameOver)
+        {
+            if (Input.GetKey(KeyCode.Return))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
 	}
 
-	void PLayerHaveWin()
+    void PlayerHaveLost()
+    {
+        ImageEndPlayer1.texture = defeat;
+        CanvasEndPlayer1.planeDistance = 1;
+    }
+
+
+    void PlayerHaveWin()
 	{
-		print ("WIN");
-	}
+        ImageEndPlayer1.texture = victory;
+        CanvasEndPlayer1.planeDistance = 1;
+    }
 }
